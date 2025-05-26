@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CA2.Data;
+using NguyenThanhTung_1921050664_KiemTra.Data;
 using NguyenThanhTung_1921050664_KiemTra.Models;
 
 namespace NguyenThanhTung_1921050664_KiemTra.Controllers
@@ -31,10 +31,8 @@ namespace NguyenThanhTung_1921050664_KiemTra.Controllers
             if (id == null)
             {
                 return NotFound();
-            }
-
-            var cA2 = await _context.CA2s
-                .FirstOrDefaultAsync(m => m.Id == id);
+            }            var cA2 = await _context.CA2s
+                .FirstOrDefaultAsync(m => m.IdCA2 == id);
             if (cA2 == null)
             {
                 return NotFound();
@@ -53,8 +51,7 @@ namespace NguyenThanhTung_1921050664_KiemTra.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCA2,GiaTriSo,HoanThanh,LamQuaTrinh")] CA2 cA2)
+        [ValidateAntiForgeryToken]        public async Task<IActionResult> Create([Bind("IdCA2,GiaTriSo,HoanThanh,LamQuaTrinh")] NguyenThanhTung_1921050664_KiemTra.Models.CA2 cA2)
         {
             if (ModelState.IsValid)
             {
@@ -85,8 +82,7 @@ namespace NguyenThanhTung_1921050664_KiemTra.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCA2,GiaTriSo,HoanThanh,LamQuaTrinh")] CA2 cA2)
+        [ValidateAntiForgeryToken]        public async Task<IActionResult> Edit(int id, [Bind("IdCA2,GiaTriSo,HoanThanh,LamQuaTrinh")] NguyenThanhTung_1921050664_KiemTra.Models.CA2 cA2)
         {
             if (id != cA2.IdCA2)
             {

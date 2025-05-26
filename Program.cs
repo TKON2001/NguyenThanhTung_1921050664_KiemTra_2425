@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using CA2.Data; // Corrected namespace for ApplicationDbContext
+using NguyenThanhTung_1921050664_KiemTra.Data; // Corrected namespace for ApplicationDbContext
 
 var builder = WebApplication.CreateBuilder(args);
 

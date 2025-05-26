@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using NguyenThanhTung_1921050664_KiemTra.Models;
 
-namespace CA2.Data
+namespace NguyenThanhTung_1921050664_KiemTra.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -10,14 +10,13 @@ namespace CA2.Data
         {
         }
 
-        // Parameterless constructor for design-time tools
         public ApplicationDbContext()
         {
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Only configure if not already configured (for design-time)
+
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlite("Data Source=app.db");
